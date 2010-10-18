@@ -6,5 +6,7 @@ api_version: 1
 handlers:
 - url: /pongbots/.*
   script: pongbots.py
+- url: /zimbubots/.*
+  script: zimbubots.py
 - url: /.*
   script: main.py
