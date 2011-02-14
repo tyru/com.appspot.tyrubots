@@ -16,9 +16,9 @@ class ZimbuBots(webapp.RequestHandler):
         self.response.out.write('<img src="http://www.a-a-p.org/images/zimbu_cutout.jpg" />')
 
     def post(self, path):
-        r_right_brace = re.compile(r"^\s*}\s*$")
-        r_left_brace = re.compile(r"^\s*{\s*$")
-        json = simplejson.loads(self.request.get('json'))
+        r_right_brace = re.compile(r"^[ \t]*}[ \t]*$")
+        r_left_brace = re.compile(r"^[ \t]*{[ \t]*$")
+        json = simplejson.loads(self.request.body)
         self.response.headers['Content-Type'] = 'text/plain'
 
         for e in json['events']:

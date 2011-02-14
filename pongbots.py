@@ -17,7 +17,7 @@ class PongBots(webapp.RequestHandler):
 
     def post(self, path):
         r = re.compile(r"^\s*ping\s*$", re.IGNORECASE)
-        json = simplejson.loads(self.request.get('json'))
+        json = simplejson.loads(self.request.body)
         self.response.headers['Content-Type'] = 'text/plain'
 
         for e in json['events']:
